@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.2.4),
-    on March 08, 2022, at 12:02
+    on March 08, 2022, at 12:09
 If you publish work using this script the most relevant publication is:
 
     Peirce J, Gray JR, Simpson S, MacAskill M, Höchenberger R, Sogo H, Kastman E, Lindeløv JK. (2019) 
@@ -167,19 +167,10 @@ auction_slider = visual.Slider(win=win, name='auction_slider',
     color='Black', font='HelveticaBold',
     flip=False)
 
-# Initialize components for Routine "auction_sham"
-auction_shamClock = core.Clock()
-auction_slider_sham = visual.Slider(win=win, name='auction_slider_sham',
-    size=(1000,30), pos=(0, 0), units=None,
-    labels=['$0','$2.50','$5'], ticks=[0,500,1000],
-    granularity=0, style=['slider'],
-    color='Black', font='HelveticaBold',
-    flip=False)
-
 # Initialize components for Routine "end"
 endClock = core.Clock()
 done = visual.TextStim(win=win, name='done',
-    text='You have completed the task :)',
+    text='You have completed the task :)\n\nExperimenter: Press Enter to end',
     font='Arial',
     pos=(0, 0), height=30, wrapWidth=1000, ori=0, 
     color='Black', colorSpace='rgb', opacity=1, 
@@ -584,77 +575,6 @@ for thisBid_item in bid_items:
     if didclick == 0:
         bid_items.addData('Bid', 9999)
         bid_items.addData('Bid_RT', 9999)
-    
-    # ------Prepare to start Routine "auction_sham"-------
-    # update component parameters for each repeat
-    #hide mouse
-    mouse = event.Mouse(visible=False)
-    auction_slider_sham.reset()
-    # keep track of which components have finished
-    auction_shamComponents = [auction_slider_sham]
-    for thisComponent in auction_shamComponents:
-        thisComponent.tStart = None
-        thisComponent.tStop = None
-        thisComponent.tStartRefresh = None
-        thisComponent.tStopRefresh = None
-        if hasattr(thisComponent, 'status'):
-            thisComponent.status = NOT_STARTED
-    # reset timers
-    t = 0
-    _timeToFirstFrame = win.getFutureFlipTime(clock="now")
-    auction_shamClock.reset(-_timeToFirstFrame)  # t0 is time of first possible flip
-    frameN = -1
-    continueRoutine = True
-    
-    # -------Run Routine "auction_sham"-------
-    while continueRoutine:
-        # get current time
-        t = auction_shamClock.getTime()
-        tThisFlip = win.getFutureFlipTime(clock=auction_shamClock)
-        tThisFlipGlobal = win.getFutureFlipTime(clock=None)
-        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-        # update/draw components on each frame
-        
-        # *auction_slider_sham* updates
-        if auction_slider_sham.status == NOT_STARTED and tThisFlip >= 0-frameTolerance:
-            # keep track of start time/frame for later
-            auction_slider_sham.frameNStart = frameN  # exact frame index
-            auction_slider_sham.tStart = t  # local t and not account for scr refresh
-            auction_slider_sham.tStartRefresh = tThisFlipGlobal  # on global time
-            win.timeOnFlip(auction_slider_sham, 'tStartRefresh')  # time at next scr refresh
-            auction_slider_sham.setAutoDraw(True)
-        if auction_slider_sham.status == STARTED:
-            # is it time to stop? (based on global clock, using actual start)
-            if tThisFlipGlobal > auction_slider_sham.tStartRefresh + 5 - elapsedtime-frameTolerance:
-                # keep track of stop time/frame for later
-                auction_slider_sham.tStop = t  # not accounting for scr refresh
-                auction_slider_sham.frameNStop = frameN  # exact frame index
-                win.timeOnFlip(auction_slider_sham, 'tStopRefresh')  # time at next scr refresh
-                auction_slider_sham.setAutoDraw(False)
-        
-        # check for quit (typically the Esc key)
-        if endExpNow or defaultKeyboard.getKeys(keyList=["escape"]):
-            core.quit()
-        
-        # check if all components have finished
-        if not continueRoutine:  # a component has requested a forced-end of Routine
-            break
-        continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in auction_shamComponents:
-            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                continueRoutine = True
-                break  # at least one component has not yet finished
-        
-        # refresh the screen
-        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-            win.flip()
-    
-    # -------Ending Routine "auction_sham"-------
-    for thisComponent in auction_shamComponents:
-        if hasattr(thisComponent, "setAutoDraw"):
-            thisComponent.setAutoDraw(False)
-    # the Routine "auction_sham" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
     thisExp.nextEntry()
     
 # completed 1 repeats of 'bid_items'

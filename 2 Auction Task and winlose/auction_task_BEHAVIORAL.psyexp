@@ -330,7 +330,6 @@
     </LoopInitiator>
     <Routine name="food"/>
     <Routine name="auction"/>
-    <Routine name="auction_sham"/>
     <LoopTerminator name="bid_items"/>
     <Routine name="end"/>
   </Flow>
