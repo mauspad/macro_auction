@@ -1,6 +1,7 @@
 data/
 *_lastrun.py
 __pycache__/
+~$*
 
 # OS generated files #
 ######################
